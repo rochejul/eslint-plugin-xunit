@@ -1,16 +1,7 @@
 describe('xunit/fixture - ', () => {
   const { RuleTester } = require('eslint');
 
-  const rule = require('../../lib/rules/xunit-fixture')
-
-  RuleTester.describe = function describe(text, method) {
-    RuleTester.it.title = text;
-    return method.call(this);
-  };
-
-  RuleTester.it = function it(text, method) {
-    test(`${RuleTester.it.title}: ${text}`, method);
-  };
+  const rule = require('../../lib/rules/xunit-fixture');
 
   const ruleTester = new RuleTester();
   ruleTester.run(
