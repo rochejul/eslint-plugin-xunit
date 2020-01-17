@@ -28,6 +28,11 @@ function myFixtureToTest() {
         {
           code: `
 [Fixture]
+Test.myTests.myHelper = function () {}`
+        },
+        {
+          code: `
+[Fixture]
 
 function myFixtureToTest() {
 }`
