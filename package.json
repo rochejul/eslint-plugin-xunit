@@ -32,7 +32,7 @@
     "url": "https://github.com/rochejul/eslint-plugin-xunit/issues"
   },
   "homepage": "https://github.com/rochejul/eslint-plugin-xunit#readme",
-  "license": "ISC",
+  "license": "MIT",
   "engines": {
     "node": ">=8.0.0",
     "npm": ">=5.0.0"
