@@ -66,6 +66,18 @@ var a = 5;
               message: 'xunit Fixture should be associated to a function.'
             }
           ]
+        },
+        {
+          code: `
+function myTests() {
+  [Fixture]
+  Test.myTests.myHelper = function () {}
+}`,
+          errors: [
+            {
+              message: 'xunit Global Fixture should be declared on global scope.'
+            }
+          ]
         }
       ]
     }
