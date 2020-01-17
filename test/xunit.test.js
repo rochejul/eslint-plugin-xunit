@@ -22,6 +22,8 @@ describe('eslint-plugin-xunit - ', () => {
     ]);
 
     const [errorReport] = eslintReport.results;
-    expect(errorReport.messages.map((msg) => msg.ruleId)).toEqual([ ]);
+    expect(
+      errorReport.messages.map(({ ruleId, message }) => `${ruleId}::${message}`)
+      ).toEqual([ ]);
 });
 });
