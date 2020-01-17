@@ -1,0 +1,3 @@
+[Fixture]
+function myFixtureToTest() {
+}
