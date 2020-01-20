@@ -1,10 +1,10 @@
 {
   "name": "eslint-plugin-xunit",
-  "version": "1.0.0",
+  "version": "1.0.1-beta",
   "description": "Eslint plugin for xunit tests",
   "main": "index.js",
   "scripts": {
-    "bump-release": "npm run bumping -- --unpreid --git-create-branch",
+    "bump-release": "npm run bumping -- --unpreid",
     "bump:major": "npm run bumping -- --increment major",
     "bump:minor": "npm run bumping -- --increment minor",
     "bump:patch": "npm run bumping -- --increment patch",
