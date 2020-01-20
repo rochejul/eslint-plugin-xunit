@@ -4,6 +4,7 @@
   "description": "Eslint plugin for xunit tests",
   "main": "index.js",
   "scripts": {
+    "bump-release": "npm run bumping -- --unpreid --git-create-branch",
     "bump:major": "npm run bumping -- --increment major",
     "bump:minor": "npm run bumping -- --increment minor",
     "bump:patch": "npm run bumping -- --increment patch",
