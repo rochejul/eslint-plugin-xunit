@@ -5,7 +5,7 @@
     "git-push": true,
     "git-create-branch": false,
     "git-branch-message": "release/%s",
-    "git-commit-message": "release: %s",
+    "git-commit-message": "build: release %s",
     "git-remote-name": "origin",
     "git-tag-message": "v%s",
     "increment": "patch",
