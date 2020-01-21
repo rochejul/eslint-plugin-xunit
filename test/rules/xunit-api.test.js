@@ -20,6 +20,42 @@ describe('xunit/api - ', () => {
         },
         {
           code: 'MyApi.Assert.equal'
+        },
+        {
+          code: 'Assert.MyAssertion',
+          options: [
+            {
+              extendedApi: {
+                'Assert': [
+                  'MyAssertion'
+                ]
+              }
+            }
+          ]
+        },
+        {
+          code: 'MyAssert.MyAssertion',
+          options: [
+            {
+              extendedApi: {
+                'MyAssert': [
+                  'MyAssertion'
+                ]
+              }
+            }
+          ]
+        },
+        {
+          code: 'MyApi.MyAssert.Equal',
+          options: [
+            {
+              extendedApi: {
+                'MyApi': [
+                  'MyAssert'
+                ]
+              }
+            }
+          ]
         }
       ],
       invalid: [
