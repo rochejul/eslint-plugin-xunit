@@ -21,48 +21,10 @@ Assert.Equal('a', 'b');
 
 ### extendedApi
 
-Examples of **incorrect** code for the default `{ "setWithoutGet": true }` option:
+Examples of **incorrect** code for the default `{ "extendedApi": { Assert: ['MyAssertMethod'] } }` option:
 
 ```js
-/*eslint accessor-pairs: "error"*/
-
-var o = {
-    set a(value) {
-        this.val = value;
-    }
-};
-
-var o = {d: 1};
-Object.defineProperty(o, 'c', {
-    set: function(value) {
-        this.val = value;
-    }
-});
-```
-
-Examples of **correct** code for the default `{ "setWithoutGet": true }` option:
-
-```js
-/*eslint accessor-pairs: "error"*/
-
-var o = {
-    set a(value) {
-        this.val = value;
-    },
-    get a() {
-        return this.val;
-    }
-};
-
-var o = {d: 1};
-Object.defineProperty(o, 'c', {
-    set: function(value) {
-        this.val = value;
-    },
-    get: function() {
-        return this.val;
-    }
-});
+Assert.MyAssertMethod('a', 'b');
 ```
 
 ## Known Limitations
