@@ -35,7 +35,7 @@ function myFixtureToTest() {
         },
         {
           code: `
-   [Fixture]
+[Fixture]
 function myFixtureToTest() {
 }`
         },
@@ -76,6 +76,16 @@ function myTests() {
           errors: [
             {
               message: 'xunit Global Fixture should be declared on global scope.'
+            }
+          ]
+        },
+        {
+          code: `
+[Fixture]
+AAA.myTests.myHelper = function () {}`,
+          errors: [
+            {
+              message: 'xunit Global Fixture should be associated to the Test object.'
             }
           ]
         }
