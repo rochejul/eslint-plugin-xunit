@@ -21,7 +21,13 @@ Assert.Equal('a', 'b');
 
 ### extendedApi
 
-Examples of **incorrect** code for the default `{ "extendedApi": { Assert: ['MyAssertMethod'] } }` option:
+Examples of **incorrect** code for the default `{ "extendedApi": { }` option:
+
+```js
+Assert.MyAssertMethod('a', 'b');
+```
+
+Examples of **correct** code for the default `{ "extendedApi": { Assert: ['MyAssertMethod'] } }` option:
 
 ```js
 Assert.MyAssertMethod('a', 'b');
