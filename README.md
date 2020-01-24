@@ -8,3 +8,43 @@ Eslint plugin for xunit tests
 
 [![NPM](https://nodei.co/npm/eslint-plugin-xunit.png?downloads=true&downloadRank=true)](https://nodei.co/npm/eslint-plugin-xunit/)
 [![NPM](https://nodei.co/npm-dl/eslint-plugin-xunit.png?&months=6&height=3)](https://nodei.co/npm/eslint-plugin-xunit/)
+
+
+This plugin ensures good usage of the xunit framework
+
+## Install it
+
+### Globally
+
+````
+npm install --global eslint-plugin-xunit
+````
+
+### In your project
+
+````
+npm install --save --save-exact eslint-plugin-xunit
+````
+
+## Configure your eslintrc file
+
+Here an example of configuration which uses the plugin
+
+```js
+{
+  // Instal the xunit plugin, please do:
+  // > npm isntall -g eslint-plugin-xunit
+  "plugins": [
+    "xunit"
+  ],
+  "extends": [
+    "plugin:xunit/recommended"
+  ]
+}
+```
+
+## Rules
+
+ * [xunit/api](./docs/rules/xunit-api.md)
+ * [xunit/fact](./docs/rules/xunit-fact.md)
+ * [xunit/fixture](./docs/rules/xunit-fixture.md)
