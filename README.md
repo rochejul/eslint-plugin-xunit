@@ -37,7 +37,7 @@ Here an example of configuration which uses the plugin
 ```js
 {
   // Instal the xunit plugin, please do:
-  // > npm isntall -g eslint-plugin-xunit
+  // > npm install -g eslint-plugin-xunit
   "plugins": [
     "xunit"
   ],
@@ -50,5 +50,6 @@ Here an example of configuration which uses the plugin
 ## Rules
 
  * [xunit/api](./docs/rules/xunit-api.md)
+ * [xunit/data](./docs/rules/xunit-data.md)
  * [xunit/fact](./docs/rules/xunit-fact.md)
  * [xunit/fixture](./docs/rules/xunit-fixture.md)
