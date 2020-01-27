@@ -13,6 +13,9 @@
     "bump:patch:beta": "npm run bumping -- --increment patch --preid beta",
     "bump:prerelease:beta": "npm run bumping -- --increment prerelease --preid beta",
     "bumping": "node ./node_modules/npmversion/bin/npmversion",
+    "style:check": "npm run prettier -- --check \"./lib/**/*.js\"",
+    "style:fix": "npm run prettier -- --write \"./lib/**/*.js\"",
+    "prettier": "node ./node_modules/prettier/bin-prettier.js",
     "test": "jest"
   },
   "keywords": [
