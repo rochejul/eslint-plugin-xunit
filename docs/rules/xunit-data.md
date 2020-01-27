@@ -41,6 +41,19 @@ MyApi.testA = function () {
 
 ## Options
 
+* `suffix` will be used (when defined) to put a convention on the Data annotation parameter where we take the test function name and we add a suffix (Default `''`).
+
+### suffix
+
+Examples of **correct** code for the default `{ "suffix": { "Data" } }` option:
+
+```js
+[Fact, Data(myTestData)]
+MyApi.myTest = function () {
+  // ...
+};
+```
+
 ## Known Limitations
 
 ## When Not To Use It

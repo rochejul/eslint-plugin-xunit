@@ -10,10 +10,21 @@ describe('xunit/data - ', () => {
         {
             valid: [
                 {
-                code:`
+                    code:`
 [Fact, Data(myVar)]
 function myFixtureToTest() {
 }`
+                },
+                {
+                    code:`
+[Fact, Data(myFixtureToTestData)]
+function myFixtureToTest() {
+}`,
+                    options: [
+                        {
+                            suffix: 'Data'
+                        }
+                    ]
                 }
             ],
             invalid: [
@@ -24,7 +35,7 @@ function myFixtureToTest() {
 }`,
                     errors: [
                         {
-                        message: 'xunit Data should be associated to a Fact annotation.'
+                            message: 'xunit Data should be associated to a Fact annotation.'
                         }
                     ]
                 },
@@ -35,7 +46,7 @@ function myFixtureToTest() {
 }`,
                     errors: [
                         {
-                        message: 'xunit Data should be a function with one parameter.'
+                            message: 'xunit Data should be a function with one parameter.'
                         }
                     ]
                 },
@@ -46,7 +57,7 @@ function myFixtureToTest() {
 }`,
                     errors: [
                         {
-                        message: 'xunit Data should be a function with one parameter.'
+                            message: 'xunit Data should be a function with one parameter.'
                         }
                     ]
                 },
@@ -57,7 +68,23 @@ function myFixtureToTest() {
 }`,
                     errors: [
                         {
-                        message: 'xunit Data should be a function with one parameter.'
+                            message: 'xunit Data should be a function with one parameter.'
+                        }
+                    ]
+                },
+                {
+                    code:`
+[Fact, Data(myVar)]
+function myFixtureToTest() {
+}`,
+                    options: [
+                        {
+                            suffix: 'Data'
+                        }
+                    ],
+                    errors: [
+                        {
+                            message: 'xunit Data should have parameter name called "myFixtureToTestData".'
                         }
                     ]
                 }
