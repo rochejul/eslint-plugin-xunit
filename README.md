@@ -1,6 +1,10 @@
 # eslint-plugin-xunit
 Eslint plugin for xunit tests
 
+![npm](https://img.shields.io/npm/v/eslint-plugin-xunit)
+![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/rochejul/eslint-plugin-xunit)
+[![GitHub license](https://img.shields.io/github/license/rochejul/eslint-plugin-xunit)](https://github.com/rochejul/eslint-plugin-xunit/blob/master/LICENSE)
+
 [![Build Status](https://travis-ci.org/rochejul/eslint-plugin-xunit.svg?branch=master)](https://travis-ci.org/rochejul/eslint-plugin-xunit)[![Dependency Status](https://david-dm.org/rochejul/eslint-plugin-xunit.svg)](https://david-dm.org/rochejul/eslint-plugin-xunit)
 [![devDependency Status](https://david-dm.org/rochejul/eslint-plugin-xunit/dev-status.svg)](https://david-dm.org/rochejul/eslint-plugin-xunit#info=devDependencies)
 
