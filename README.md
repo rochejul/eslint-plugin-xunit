@@ -50,6 +50,7 @@ Here an example of configuration which uses the plugin
 ## Rules
 
  * [xunit/api](./docs/rules/xunit-api.md)
+ * [xunit/async](./docs/rules/xunit-async.md)
  * [xunit/data](./docs/rules/xunit-data.md)
  * [xunit/fact](./docs/rules/xunit-fact.md)
  * [xunit/fixture](./docs/rules/xunit-fixture.md)
