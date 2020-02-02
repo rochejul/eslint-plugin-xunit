@@ -12,13 +12,13 @@ describe('xunit/data - ', () => {
                 {
                     code:`
 [Fact, Data(myVar)]
-function myFixtureToTest() {
+function myFixtureToTest(data) {
 }`
                 },
                 {
                     code:`
 [Fact, Data(myFixtureToTestData)]
-function myFixtureToTest() {
+function myFixtureToTest(data) {
 }`,
                     options: [
                         {
@@ -31,7 +31,7 @@ function myFixtureToTest() {
                 {
                     code:  `
 [Data(myVar)]
-function myFixtureToTest() {
+function myFixtureToTest(data) {
 }`,
                     errors: [
                         {
@@ -42,7 +42,7 @@ function myFixtureToTest() {
                 {
                     code:  `
 [Fact, Data]
-function myFixtureToTest() {
+function myFixtureToTest(data) {
 }`,
                     errors: [
                         {
@@ -53,7 +53,7 @@ function myFixtureToTest() {
                 {
                     code:  `
 [Fact, Data()]
-function myFixtureToTest() {
+function myFixtureToTest(data) {
 }`,
                     errors: [
                         {
@@ -64,7 +64,7 @@ function myFixtureToTest() {
                 {
                     code:  `
 [Fact, Data(myVar1, myVar2)]
-function myFixtureToTest() {
+function myFixtureToTest(data) {
 }`,
                     errors: [
                         {
@@ -75,7 +75,7 @@ function myFixtureToTest() {
                 {
                     code:`
 [Fact, Data(myVar)]
-function myFixtureToTest() {
+function myFixtureToTest(data) {
 }`,
                     options: [
                         {
@@ -85,6 +85,17 @@ function myFixtureToTest() {
                     errors: [
                         {
                             message: 'xunit Data should have parameter name called "myFixtureToTestData".'
+                        }
+                    ]
+                },
+                {
+                    code:  `
+[Fact, Data(myVar)]
+function myFixtureToTest() {
+}`,
+                    errors: [
+                        {
+                            message: 'when using xunit Data, you should then declare in your function a parameter to retrieve the data.'
                         }
                     ]
                 }
