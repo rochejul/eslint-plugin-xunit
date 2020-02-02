@@ -7,31 +7,37 @@ Here are some examples:
 ```js
 // Bad
 [Data]
-MyApi.testA = function () {
+function myTest () {
   // ...
 };
 
 // Bad
 [Fact, Data]
-MyApi.testA = function () {
+function myTest () {
   // ...
 };
 
 // Bad
 [Fact, Data()]
-MyApi.testA = function () {
+function myTest () {
   // ...
 };
 
 // Bad
 [Fact, Data(myVar1, myVar2)]
-MyApi.testA = function () {
+function myTest () {
+  // ...
+};
+
+// Bad
+[Fact, Data(myVar1)]
+function myTest () {
   // ...
 };
 
 // Good
 [Fact, Data(myVar)]
-MyApi.testA = function () {
+function myTest (data) {
   // ...
 };
 
@@ -42,6 +48,7 @@ MyApi.testA = function () {
 ## Options
 
 * `suffix` will be used (when defined) to put a convention on the Data annotation parameter where we take the test function name and we add a suffix (Default `''`).
+* `dataParameterName` will be used (when defined) to put a convention on the test function parameter name (Default `''`).
 
 ### suffix
 
@@ -49,7 +56,18 @@ Examples of **correct** code for the default `{ "suffix": { "Data" } }` option:
 
 ```js
 [Fact, Data(myTestData)]
-MyApi.myTest = function () {
+function myTest(data) {
+  // ...
+};
+```
+
+### dataParameterName
+
+Examples of **correct** code for the default `{ "dataParameterName": { "myData" } }` option:
+
+```js
+[Fact, Data(myTestData)]
+function myTest(myData) {
   // ...
 };
 ```

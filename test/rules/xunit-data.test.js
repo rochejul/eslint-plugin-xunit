@@ -25,6 +25,17 @@ function myFixtureToTest(data) {
                             suffix: 'Data'
                         }
                     ]
+                },
+                {
+                    code:`
+[Fact, Data(myVar)]
+function myFixtureToTest(data) {
+}`,
+                    options: [
+                        {
+                            dataParameterName: 'data'
+                        }
+                    ]
                 }
             ],
             invalid: [
@@ -96,6 +107,22 @@ function myFixtureToTest() {
                     errors: [
                         {
                             message: 'when using xunit Data, you should then declare in your function a parameter to retrieve the data.'
+                        }
+                    ]
+                },
+                {
+                    code:  `
+[Fact, Data(myVar)]
+function myFixtureToTest(myData) {
+}`,
+                    options: [
+                        {
+                            dataParameterName: 'data'
+                        }
+                    ],
+                    errors: [
+                        {
+                            message: 'xunit Data recommends to use this parameter name: "data".'
                         }
                     ]
                 }
