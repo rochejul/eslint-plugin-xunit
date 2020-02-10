@@ -1,19 +1,28 @@
 describe('eslint-plugin-xunit - ', () => {
-  const { CLIEngine } = require('eslint');
   const path = require('path');
 
   const baseTestFiles = path.resolve(path.join(__dirname, './fake-files/'));
-  const mockEslintXunit = require('../index');
+  const eslintXunit = require('../index');
+  const mockEslintXunitPath = path.resolve(__dirname, '../index.js');
 
   let cli;
 
   beforeEach(() => {
-      jest.mock('eslint-plugin-xunit', () => mockEslintXunit, { virtual: true });
-      cli = new CLIEngine({
-          baseConfig: mockEslintXunit.configs.recommended,
-          useEslintrc: false,
-          ignore: false
-      });
+    jest.mock('eslint/lib/shared/relative-module-resolver', () => {
+      return {
+        resolve: () => {
+          return mockEslintXunitPath;
+        }
+      }
+    });
+
+    const { CLIEngine } = require('eslint');
+
+    cli = new CLIEngine({
+        baseConfig: eslintXunit.configs.recommended,
+        useEslintrc: false,
+        ignore: false
+    });
   });
 
   it('with code', () => {
