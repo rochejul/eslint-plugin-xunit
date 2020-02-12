@@ -54,3 +54,4 @@ Here an example of configuration which uses the plugin
  * [xunit/data](./docs/rules/xunit-data.md)
  * [xunit/fact](./docs/rules/xunit-fact.md)
  * [xunit/fixture](./docs/rules/xunit-fixture.md)
+ * [xunit/trait](./docs/rules/xunit-trait.md)
