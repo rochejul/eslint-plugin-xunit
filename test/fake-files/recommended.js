@@ -24,15 +24,15 @@ Test.myTests.myHelper = function () {
     [Fact, Skip]
     function myFirstRealTest() {
       // Arrange
-      var a = "a";
+      var expected = "Radix not equal to 0 must be supplied";
 
       // Act
-      Mocks.Mock()(function () {
-        a += "b";
+      var actual = Record.Exception(function(){
+          // Do something
       });
 
       // Assert
-      Assert.Equal(a, 5);
+      Assert.Equal(expected,actual);
     }
 
     [Fact, Skip]
