@@ -1,7 +1,7 @@
-describe('xunit/trait - ', () => {
+describe('xunit/skip - ', () => {
     const { RuleTester } = require('eslint');
 
-    const rule = require('../../lib/rules/xunit-trait');
+    const rule = require('../../lib/rules/xunit-skip');
 
     const ruleTester = new RuleTester();
     ruleTester.run(
@@ -11,13 +11,25 @@ describe('xunit/trait - ', () => {
             valid: [
                 {
                     code:`
-[Fact, Trait('my trait')]
+[Fact, Skip]
 function myFixtureToTest(data) {
 }`
                 },
                 {
                     code:`
-[Fixture, Trait('my trait')]
+[Fact, Skip('why not?')]
+function myFixtureToTest(data) {
+}`
+                },
+                {
+                    code:`
+[Fixture, Skip]
+function myFixtureToTest(data) {
+}`
+                },
+                {
+                    code:`
+[Fixture, Skip('why not?')]
 function myFixtureToTest(data) {
 }`
                 }
@@ -25,45 +37,34 @@ function myFixtureToTest(data) {
             invalid: [
                 {
                     code:  `
-[Trait]
+[Skip]
 function myFixtureToTest(data) {
 }`,
                     errors: [
                         {
-                            message: 'xunit Trait should be associated to a Fact or Fixture annotation.'
+                            message: 'xunit Skip should be associated to a Fact or Fixture annotation.'
                         }
                     ]
                 },
                 {
                     code:  `
-[Trait('a trait')]
+[Skip('why not?')]
 function myFixtureToTest(data) {
 }`,
                     errors: [
                         {
-                            message: 'xunit Trait should be associated to a Fact or Fixture annotation.'
+                            message: 'xunit Skip should be associated to a Fact or Fixture annotation.'
                         }
                     ]
                 },
                 {
-                code:  `
-[Fixture, Trait]
-function myFixtureToTest(data) {
-}`,
-                errors: [
-                    {
-                        message: 'xunit Trait should be a function with one parameter.'
-                    }
-                ]
-                },
-                {
                     code:  `
-[Fact, Trait]
+[Fact, Skip('why not?', 'yes, why not?')]
 function myFixtureToTest(data) {
 }`,
                     errors: [
                         {
-                            message: 'xunit Trait should be a function with one parameter.'
+                            message: 'xunit Skip should be a function with zero or one parameter.'
                         }
                     ]
                 }
