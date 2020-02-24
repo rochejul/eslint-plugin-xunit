@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-xunit",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Eslint plugin for xunit tests",
   "main": "index.js",
   "scripts": {
